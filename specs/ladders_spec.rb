@@ -7,6 +7,7 @@ require_relative("../ladders")
 class TestLadders < MiniTest::Test
 	def setup()
     @ladder = Ladder.new(5, 25)
+		@laddee
   end
 
   def test_return_position__start()

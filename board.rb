@@ -8,7 +8,13 @@ class Board
 	end
 
 	def return_array_position()
-		return @board[1]
+		return @board[28]
 	end
+
+	def move_item_on_board()
+		@board[6] = @board[1]
+	end
+
+	
 
 end

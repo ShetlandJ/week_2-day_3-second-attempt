@@ -35,7 +35,7 @@ class TestBoard < MiniTest::Test
 
 		@new_board = [
 			[@player1, @player2, @player3, @player4],
-			nil,
+			"Hello world",
 			@ladder1,
 			nil,
 			@ladder2,
@@ -61,12 +61,12 @@ class TestBoard < MiniTest::Test
 			nil,
 			# 24
 			nil,
-			nil,
 			@snake4,
 			nil,
 			nil,
+			nil,
 			nil
-			@game.finish
+			# @game.finish
 		]
 		@board = Board.new(@new_board)
 end
@@ -81,6 +81,12 @@ end
 
 	def test_return_array_position()
 		assert_nil(@board.return_array_position())
+	end
+
+	def test_move_item_on_board()
+		expected = "Hello world"
+		actual = @board.move_item_on_board()
+		assert_equal(expected, actual)
 	end
 
 end
