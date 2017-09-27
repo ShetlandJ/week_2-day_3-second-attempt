@@ -33,60 +33,12 @@ class TestBoard < MiniTest::Test
 		@ladder3 = Ladder.new(11, 26)
 		@ladder4 = Ladder.new(20, 29)
 
-		@new_board = [
-			[@player1, @player2, @player3, @player4],
-			"Hello world",
-			@ladder1,
-			nil,
-			@ladder2,
-			nil,
-			nil,
-			nil,
-			nil,
-			nil,
-			@ladder3,
-			# 12
-			nil,
-			nil,
-			nil,
-			nil,
-			nil,
-			@snake1,
-			nil,
-			@snake2,
-			@ladder4,
-			@snake3,
-			nil,
-			nil,
-			nil,
-			# 24
-			nil,
-			@snake4,
-			nil,
-			nil,
-			nil,
-			nil
-			# @game.finish
-		]
-		@board = Board.new(@new_board)
-end
+		@snakes = [@snake1, @snake2, @snake3, @snake4]
+		@ladders = [@ladder1, @ladder2, @ladder3, @ladder4]
 
-	def test_length_of_board()
-		assert_equal(30, @board.length_of_board())
+		@board = Board.new(@snakes, @ladders)
 	end
 
-	def test_return_array_position()
-		assert_nil(@board.return_array_position())
-	end
 
-	def test_return_array_position()
-		assert_nil(@board.return_array_position())
-	end
-
-	def test_move_item_on_board()
-		expected = "Hello world"
-		actual = @board.move_item_on_board()
-		assert_equal(expected, actual)
-	end
 
 end
