@@ -34,4 +34,21 @@ class TestPlayers < MiniTest::Test
 		assert(@sides.include?(@dice.roll_dice), actual)
 	end
 
+	def test_check_player_position_by_text()
+		assert_equal("Joe, yellow piece, is at position 1 on board", @player1.check_player_position_by_text() )
+	end
+
+	def test_check_player_position_by_number()
+		assert_equal(1, @player1.check_player_position_by_number() )
+	end
+
+	def test_increase_player_position()
+		expected = @player1.check_player_position_by_number + @player1.increase_player_position
+
+		actual = @player1.check_player_position_by_number()
+
+		assert_equal(expected, actual)
+	end
+
+
 end
